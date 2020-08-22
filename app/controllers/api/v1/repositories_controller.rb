@@ -19,7 +19,7 @@ module Api
       private
 
       def search_params
-        params.permit(:repository_name, :language, :user, :sort, :order, :page, :per_page)
+        params.permit(:term, :language, :user, :sort, :order, :page, :per_page)
       end
     end
   end

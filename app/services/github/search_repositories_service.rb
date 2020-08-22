@@ -28,8 +28,8 @@ module Github
 
     def options
       search_term =
-        if params[:repository_name]
-          params[:repository_name]
+        if params[:term]
+          params[:term]
         elsif params[:language]
           "language:#{params[:language]}"
         elsif params[:user]
