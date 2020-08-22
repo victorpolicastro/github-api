@@ -37,6 +37,9 @@ gem('bcrypt')
 # Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
 gem('rest-client')
 
+# Simple Rails app configuration
+gem 'figaro'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem('byebug', platforms: %i[mri mingw x64_mingw])
