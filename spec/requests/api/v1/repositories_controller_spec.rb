@@ -3,7 +3,7 @@
 RSpec.describe('Repositories endpoint', type: :request) do
   describe 'GET /api/v1/repositories' do
     let(:repositories_endpoint)            { api_v1_repositories_path                                           }
-    let(:github_endpoint)                  { 'https://api.github.com/search/repositories'                       }
+    let(:github_endpoint)                  { ENV['GITHUB_API']                                                  }
     let!(:user)                            { create(:user)                                                      }
     let(:token)                            { JsonWebToken.encode(user_id: user.id, exp: 24.hours.from_now.to_i) }
     let(:jwt)                              { "Bearer #{token}"                                                  }

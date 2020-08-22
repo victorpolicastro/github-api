@@ -65,6 +65,6 @@ def stub_url
   sort = sent_params[:sort]
 
   <<~HEREDOC
-    https://api.github.com/search/repositories?order=#{order}&page=#{page}&per_page=#{per_page}&q=language:ruby&sort=#{sort}
+    #{ENV['GITHUB_API']}?order=#{order}&page=#{page}&per_page=#{per_page}&q=language:ruby&sort=#{sort}
   HEREDOC
 end

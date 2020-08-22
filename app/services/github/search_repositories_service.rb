@@ -4,7 +4,7 @@ module Github
   class SearchRepositoriesService
     LOG_TAG = '[SEARCH REPOSITORIES]:'
     private_constant :LOG_TAG
-    ENDPOINT = 'https://api.github.com/search/repositories'
+    ENDPOINT = ENV['GITHUB_API']
     private_constant :ENDPOINT
     METHOD = 'GET'
     private_constant :METHOD
