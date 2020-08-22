@@ -18,17 +18,17 @@ class AuthenticateUserService
     raise_validation_error if invalid?
 
     unless user.authenticate(password)
-      return OpenStruct.new(success?: false, message: 'There was an error in your authentication')
+      return Response.new(success?: false, message: 'There was an error in your authentication')
     end
 
     token, time = create_token
 
-    OpenStruct.new(success?: true, data: { token: token, exp: time.strftime('%Y-%m-%d %H:%M') })
+    Response.new(success?: true, data: { token: token, exp: time.strftime('%Y-%m-%d %H:%M') })
   rescue StandardError => e
     Rails.logger.error("#{LOG_TAG} #{e.message}")
     Rails.logger.error("#{LOG_TAG} #{e.backtrace.join("\n")}")
 
-    OpenStruct.new(success?: false, message: e.message)
+    Response.new(success?: false, message: e.message)
   end
 
   private

@@ -20,7 +20,7 @@ RSpec.describe('Repositories endpoint', type: :request) do
       before do
         allow(search_repositories_service_call)
           .to(receive(:call)
-          .and_return(OpenStruct.new(success?: false, message: Faker::Lorem.sentence)))
+          .and_return(Response.new(success?: false, message: Faker::Lorem.sentence)))
         allow(search_repositories_service).to(receive(:new).and_return(search_repositories_service_call))
         get(repositories_endpoint, headers: { authorization: jwt })
       end
@@ -30,9 +30,9 @@ RSpec.describe('Repositories endpoint', type: :request) do
 
     context 'when success' do
       before do
-        allow(search_repositories_service_call).to(receive(:call).and_return(OpenStruct.new(success?: true, data: {})))
+        allow(search_repositories_service_call).to(receive(:call).and_return(Response.new(success?: true, data: {})))
         allow(search_repositories_service).to(receive(:new).and_return(search_repositories_service_call))
-        allow(index_presenter_attributes).to(receive(:attributes).and_return(OpenStruct.new({})))
+        allow(index_presenter_attributes).to(receive(:attributes).and_return({}))
         allow(index_presenter).to(receive(:new).and_return(index_presenter_attributes))
         get(repositories_endpoint, headers: { authorization: jwt })
       end

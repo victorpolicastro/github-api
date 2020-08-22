@@ -19,7 +19,7 @@ module Github
       Rails.logger.error("#{LOG_TAG} #{e.message}")
       Rails.logger.error("#{LOG_TAG} #{e.backtrace.join("\n")}")
 
-      OpenStruct.new(success?: false, message: e.message)
+      Response.new(success?: false, message: e.message)
     end
 
     private

@@ -18,13 +18,12 @@ class CreateUserService
 
     user = User.create!(email: email, password: password)
 
-    OpenStruct.new(success?: true, data: user, message: "User #{email} successfully created")
+    Response.new(success?: true, data: user, message: "User #{email} successfully created")
   rescue StandardError => e
-    Rails.logger.error("#{LOG_TAG} There was an error creating user with email #{email}")
     Rails.logger.error("#{LOG_TAG} #{e.message}")
     Rails.logger.error("#{LOG_TAG} #{e.backtrace.join("\n")}")
 
-    OpenStruct.new(success?: false, message: e.message)
+    Response.new(success?: false, message: e.message)
   end
 
   private

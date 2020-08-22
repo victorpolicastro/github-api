@@ -2,9 +2,9 @@
 
 RSpec.describe(Api::V1::Repositories::IndexPresenter) do
   describe '#attributes' do
-    let!(:repositories)       { [repository, repository]                     }
-    let(:data)                { described_class.new(repositories).attributes }
-    let(:first_repository)    { repositories.first                           }
+    let!(:repositories)        { [repository, repository]                     }
+    let(:data)                 { described_class.new(repositories).attributes }
+    let(:first_repository)     { repositories.first                           }
     let(:formatted_repository) { data.first                                   }
 
     it { expect(data).not_to(be_blank) }
