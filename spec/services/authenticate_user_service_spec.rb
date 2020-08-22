@@ -28,7 +28,7 @@ RSpec.describe(AuthenticateUserService) do
   context 'when user inserts the wrong password' do
     let(:response) { described_class.new(email, Faker::Alphanumeric.alphanumeric(number: 6)).call }
 
-    it { expect(response.message).to(include('There was an error on your authentication')) }
+    it { expect(response.message).to(include('There was an error in your authentication')) }
   end
 
   context 'when valid' do

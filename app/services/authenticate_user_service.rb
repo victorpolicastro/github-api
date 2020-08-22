@@ -18,7 +18,7 @@ class AuthenticateUserService
     raise_validation_error if invalid?
 
     unless user.authenticate(password)
-      return OpenStruct.new(success?: false, message: 'There was an error on your authentication')
+      return OpenStruct.new(success?: false, message: 'There was an error in your authentication')
     end
 
     token, time = create_token
