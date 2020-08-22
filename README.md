@@ -22,3 +22,6 @@ GITHUB_API: 'https://api.github.com/search/repositories'
 
 # How to run Rubocop?
 1. Run `rubocop` to see all rubocop offences.
+
+# Endpoint documentation
+You can access the documentation [HERE]<https://documenter.getpostman.com/view/6395540/T1LV94XS?version=latest#intro>
