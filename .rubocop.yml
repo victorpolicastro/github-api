@@ -31,6 +31,3 @@ Style/DocumentationMethod:
 
 Lint/NumberConversion:
   Enabled: false
-
-Performance/OpenStruct:
-  Enabled: false

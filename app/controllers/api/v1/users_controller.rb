@@ -3,8 +3,6 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      before_action :authorize_request, except: :create
-
       # POST /api/v1/users
       def create
         response = CreateUserService.new(user_params[:email], user_params[:password]).call
