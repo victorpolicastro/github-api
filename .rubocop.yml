@@ -7,6 +7,10 @@ AllCops:
   DisplayCopNames: true
   EnabledByDefault: true
   TargetRubyVersion: 2.7.1
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/*'
 
 Rails:
   Enabled: true
@@ -31,3 +35,5 @@ Style/DocumentationMethod:
 
 Lint/NumberConversion:
   Enabled: false
+
+

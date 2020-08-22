@@ -36,7 +36,7 @@ gem('bcrypt')
 gem('rest-client')
 
 # Simple Rails app configuration
-gem 'figaro'
+gem('figaro')
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
