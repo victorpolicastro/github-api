@@ -20,17 +20,17 @@ class SendRequestService
     response = RestClient::Request.execute(method: method.to_sym, url: endpoint, headers: { params: params })
     data = JSON.parse(response)
 
-    OpenStruct.new(success?: true, data: data)
+    Response.new(success?: true, data: data)
   rescue RestClient::ExceptionWithResponse => e
     Rails.logger.error("#{LOG_TAG} #{e.message}")
     Rails.logger.error("#{LOG_TAG} #{e.backtrace.join("\n")}")
 
-    OpenStruct.new(success?: false, message: e.message)
+    Response.new(success?: false, message: e.message)
   rescue StandardError => e
     Rails.logger.error("#{LOG_TAG} #{e.message}")
     Rails.logger.error("#{LOG_TAG} #{e.backtrace.join("\n")}")
 
-    OpenStruct.new(success?: false, message: e.message)
+    Response.new(success?: false, message: e.message)
   end
 
   private

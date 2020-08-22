@@ -11,7 +11,7 @@ RSpec.describe(Github::SearchRepositoriesService) do
     before do
       allow(send_request_service_call)
         .to(receive(:call)
-        .and_return(OpenStruct.new(success?: false, message: Faker::Lorem.sentence)))
+        .and_return(Response.new(success?: false, message: Faker::Lorem.sentence)))
       allow(send_request_service).to(receive(:new).and_return(send_request_service_call))
     end
 
@@ -24,7 +24,7 @@ RSpec.describe(Github::SearchRepositoriesService) do
     before do
       allow(send_request_service_call)
         .to(receive(:call)
-        .and_return(OpenStruct.new(success?: true, message: Faker::Lorem.sentence)))
+        .and_return(Response.new(success?: true, message: Faker::Lorem.sentence)))
       allow(send_request_service).to(receive(:new).and_return(send_request_service_call))
     end
 
