@@ -24,7 +24,7 @@ GITHUB_API: 'https://api.github.com/search/repositories'
 1. Run `rubocop` to see all rubocop offences.
 
 # Endpoint documentation
-You can access the documentation [HERE]<https://documenter.getpostman.com/view/6395540/T1LV94XS?version=latest#intro>
+You can access the documentation here: https://documenter.getpostman.com/view/6395540/T1LV94XS?version=latest#intro
 
 # Production
 You can find the api on http://github-repository-finder-00.herokuapp.com (yes, it's a bad name, but all the other ones were taken :'()
